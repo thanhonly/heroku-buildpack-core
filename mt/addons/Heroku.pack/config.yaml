@@ -1,0 +1,22 @@
+name: Heroku pack
+author_name: Masahiro Iuchi
+author_link: https://github.com/masiuchi
+version: 0.01
+
+applications:
+  upgrade:
+    type: 0
+
+callbacks:
+  init_app: $Heroku::Heroku::StopTaskLog::override
+
+tasks:
+  BackupStaticFiles:
+    label: Back up static files
+    frequency: 300
+    code: $Heroku::Heroku::BackupStaticFiles::backup
+
+  KeepUpHeroku:
+    label: Keep up Heroku
+    frequency: 900
+    code: $Heroku::Heroku::KeepUpHeroku::keep_up
