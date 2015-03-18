@@ -43,10 +43,10 @@ if [ $MT_ZIP_URL ]; then
   filename=${zip%.*}
   filename=${filename//_/.}
   if [ -d $filename ]; then
-    cp -r $filename/* $BP_DIR/
+    cp -r $filename/* $BUILD_DIR/
   elif [ -d movabletype-$filename ]; then
     # For Movable Type repo on GitHub.
-    cp -r movabletype-$filename/* $BP_DIR/
+    cp -r movabletype-$filename/* $BUILD_DIR/
   fi
 fi
 
