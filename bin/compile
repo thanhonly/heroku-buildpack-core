@@ -57,11 +57,11 @@ cp -r $BP_DIR/mt/* $BUILD_DIR
 cp $BP_DIR/bin/boot.sh $BUILD_DIR
 
 # Extract CPAN modules.
-if [ ! -d $CACHE_DIR/local ]; then
-  echo "Extrating CPAN modules." | indent
-  mkdir -p $CACHE_DIR
-  tar xzf $BP_DIR/perl/local.tar.gz -C $CACHE_DIR
-fi
+# if [ ! -d $CACHE_DIR/local ]; then
+#   echo "Extrating CPAN modules." | indent
+#   mkdir -p $CACHE_DIR
+#   tar xzf $BP_DIR/perl/local.tar.gz -C $CACHE_DIR
+# fi
 
 # Rename for heroku-buildpack-perl.
 if [[ -e $BUILD_DIR/mt.psgi && ! -e $BUILD_DIR/app.psgi ]]; then
